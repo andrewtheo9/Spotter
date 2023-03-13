@@ -2,7 +2,7 @@ const Workout = require('../../models/workout');
 
 module.exports = {
     createWorkout,
-    showWorkouts,
+    getWorkouts,
     updateWorkout,
     deleteWorkout, 
 }
@@ -13,9 +13,9 @@ async function createWorkout(req, res) {
     res.json(workout)
 }
 
-async function showWorkouts(req, res) {
+async function getWorkouts(req, res) {
     const workouts = await Workout.find();
-    res.json(workout);
+    res.json(workouts);
 }
 
 async function updateWorkout(req, res) {
