@@ -16,6 +16,7 @@ export default function NavBar({ user, setUser }) {
             <Link className="new" to="/workouts/new">New Workout</Link>
             &nbsp;&nbsp; <div className="welcome">Welcome, {user.name}</div>
             &nbsp;&nbsp;<Link className="account" to="" onClick={handleLogOut}>Log Out</Link>
+            <div className="title">SPOTTER</div>
         </nav>
     )
 }
