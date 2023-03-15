@@ -6,6 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NewWorkoutPage from '../NewWorkoutPage/NewWorkoutPage';
 import WorkoutListPage from '../WorkoutListPage/WorkoutListPage';
 import NavBar from '../../components/NavBar/NavBar'
+import EditWorkoutPage from "../EditWorkoutPage/EditWorkoutPage"
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
@@ -19,6 +20,7 @@ export default function App() {
           <Routes>
             <Route path="/workouts/new" element={<NewWorkoutPage />} />
             <Route path="/workouts" element={<WorkoutListPage />} />
+            <Route path="/workouts/edit/:id" element={<EditWorkoutPage />} />
           </Routes>
         </>
         :

@@ -5,13 +5,21 @@ module.exports = {
     getWorkouts,
     updateWorkout,
     deleteWorkout, 
+    getWorkout
 }
 
 async function createWorkout(req, res) {
-    const newWorkout = new Workout(req.body);
-    const workout = await newWorkout.save();
-    res.json(workout)
-}
+    console.log(req.body)
+    console.log('hitting')
+    try {
+      const newWorkout = await Workout.create(req.body.workout);
+  
+      res.status(201).json(newWorkout);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: 'Server Error' });
+    }
+}  
 
 async function getWorkouts(req, res) {
     const workouts = await Workout.find();
@@ -19,13 +27,21 @@ async function getWorkouts(req, res) {
 }
 
 async function updateWorkout(req, res) {
-    const workout = await Workout.findById(req.params.id);
-    const updatedWorkout = await workout.save();
+    console.log(req.body)
+    const workout = await Workout.findByIdAndUpdate(req.params.id, req.body.workout, {new:true});
+    console.log(workout)
     res.json(workout)
 }
 
 async function deleteWorkout(req, res) {
-    const workout = await Workout.findById(req.params.id);
-    await workout.delete();
+    console.log("delete")
+    const workout = await Workout.deleteOne({_id:req.params.id});
+    const workouts = await Workout.find({})
+    res.json(workouts)
+}
+
+async function getWorkout(req, res) {
+    const workout = await Workout.findById(req.params.id)
+    console.log(workout)
     res.json(workout)
 }

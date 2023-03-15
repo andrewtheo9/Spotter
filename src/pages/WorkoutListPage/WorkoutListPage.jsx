@@ -23,7 +23,7 @@ export default function WorkoutListPage() {
       return (
         <div>
           <h1>My Workouts</h1>
-          <WorkoutList workouts={workouts} />
+          <WorkoutList workouts={workouts} setWorkouts={setWorkouts} />
         </div>
       );
     };

@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const exerciseSchema = require('./exercise')
 
 const workoutSchema = new Schema ({
     date: { type: Date, required: true },
-    minutes: { type: Number, min: 30, max: 300, required: true},
+    minutes: { type: Number, min: 20, max: 300, required: true},
     muscleGroups: { type: String, required: true},
-    exercise: exerciseSchema
+    exerciseName: { type: String, required: true},
+    sets: { type: Number, required: true},
+    reps: { type: Number, required: true},
 }, {
     timestamps: true
 })

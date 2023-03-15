@@ -1,0 +1,22 @@
+.workout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 60px;
+    grid-gap: 20px;
+    padding-top: 80px;
+}
+.date, .exercise, .minutes, .muscle, .sets, .reps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 60px;
+    grid-gap: 0px;
+}
+
+.button {
+  font-size: 1.5vmin;
+  padding: .6vmin .8vmin;
+}
+
+h1 {
+    font-size: 40px;
+}

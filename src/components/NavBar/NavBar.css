@@ -1,0 +1,25 @@
+.Navigation {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.5rem 0.5rem;
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+}
+
+.all, .new, .account {
+  text-decoration: none;
+  color: #23b3cc;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.welcome {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+  }
